@@ -2,12 +2,11 @@ import * as EXCHANGE_TYPES from '../types/exchangeTypes';
 import moment from 'moment';
 
 const initialState = {
-  base: 'RUB',
-  date: +moment.utc(),
+  base: 'EUR',
+  date: moment.utc().format('YYYY-MM-DD'),
   rates: {
-    'GBP': 0.72007,
-    'JPY': 107.346001,
-    'EUR': 0.813399,
+    'USD': 0,
+    'GBP': 0,
   },
   isLoading: false,
 };
