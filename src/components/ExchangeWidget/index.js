@@ -29,23 +29,23 @@ function ExchangeWidget (props) {
     <div className='exchange_widget card'>
       <div className='exchange-widget__header card-header'>
         <h5>
-          {base}
+          RUB
         </h5>
       </div>
       <div className='exchange-widget__body card-body'>
         {
-          visibleRates
+          visibleRates.filter(rateKey => rateKey !== 'RUB')
             .map(key =>
               <RateItem
                 key={key}
                 currency={key}
-                rate={rates[key]}
+                rate={(rates[key] * rates['RUB']).toFixed(2)}
                 onRefresh={() => getSomeRate(key)}
               />,
             )
         }
         {
-          visibleRates.length < 3 && !isLoading &&
+          visibleRates.length < 4 && !isLoading &&
           <button
             className="exchange-widget__btn exchange-widget__btn--primary btn btn-primary"
             type='button'

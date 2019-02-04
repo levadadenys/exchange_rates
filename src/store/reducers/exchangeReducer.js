@@ -5,6 +5,7 @@ const initialState = {
   base: 'EUR',
   date: moment.utc().format('YYYY-MM-DD'),
   rates: {
+    'RUB': 0,
     'USD': 0,
     'GBP': 0,
   },
